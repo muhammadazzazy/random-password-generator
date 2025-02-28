@@ -58,11 +58,8 @@ def main() -> None:
                     random_password: str = ''.join(random.sample(
                         lowercase_letters + uppercase_letters + digits + special_characters, password_length))
                 else:
-                    print('Please enter a correct value')
+                    print(error_message)
                     continue
-
-                print(f'Generate: {random_password}')
-
             elif user_input == '2':
                 print(exit_message)
                 exit()
@@ -73,6 +70,8 @@ def main() -> None:
         except KeyboardInterrupt:
             print(exit_message)
             exit()
+
+        print(f'Generated password: {random_password}')
 
 
 if __name__ == '__main__':
